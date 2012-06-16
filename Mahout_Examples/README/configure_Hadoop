@@ -1,0 +1,37 @@
+config files
+-----------------------------------------------------------
+ copy the config files from 
+/src/main/config/hadoop folder to /etc/hadoop/conf
+
+
+
+Format NameNode
+----------------------------------------------------------
+/usr/lib/hadoop-0.20$ bin/hadoop namenode -format
+
+and then start hadoop
+
+
+
+Starting and Stopping Hadoop 
+--------------------------------------------------------------
+for x in /etc/init.d/hadoop-0.20* ; do sudo $x start; done
+for x in /etc/init.d/hadoop-0.20* ; do sudo $x stop; done
+
+If there is an Exception while starting hadoop due to permissions to cache 
+------------------------------------------------------------------------------
+sudo chown -R ajitkoti /var/lib/hadoop-0.20/cache/hadoop/dfs/name
+chmod 777 /var/lib/hadoop-0.20/cache/hadoop/dfs/name
+
+If there is an Exception while starting hadoop due to permissions to SecurityAuth.audit File
+-----------------------------------------------------------
+usr/lib/hadoop-0.20/logs$ sudo chown -R ajitkoti SecurityAuth.audit
+/usr/lib/hadoop-0.20/logs$ chmod 777 SecurityAuth.audit
+restart the hadoop 
+
+Check the logs at 
+--------------------------
+/var/log/hadoop/
+
+
+

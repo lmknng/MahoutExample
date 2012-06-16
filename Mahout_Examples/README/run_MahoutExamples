@@ -1,0 +1,38 @@
+Run Standalone Mahout Examples
+------------------------------------
+1] RecommenderIntro
+2] GroupLensDataModelRecommender
+
+Are Standalone Mahout Examples and Can be run from eclipse or from command line.
+
+
+Run Distributed Mahout Examples
+--------------------------------------
+Download the  links-simple-sorted.zip  from http://haselgrove.id.au/wikipedia.htm 
+or else use links-simple-sorted.txt from src/main/resource
+
+Run the WikipediaDataConverter to convert links-simple-sorted.txt to format understandable by Mahout.
+
+Move the converted file links-converted.txt into hdfs.
+/usr/lib/hadoop-0.20$  bin/hadoop fs -put Mahout_Examples/src/main/resource/links-converted.txt input/input.txt
+
+Also move the users file into hdfs
+/usr/lib/hadoop-0.20$  bin/hadoop fs -put Mahout_Examples/src/main/resource/users.txt input/users.txt
+
+
+/usr/lib/hadoop-0.20$  bin/hadoop jar /home/ajitkoti/mahout-core-0.5-job.jar 
+org.apache.mahout.cf.taste.hadoop.item.RecommenderJob 
+-Dmapred.input.dir=input/input.txt -Dmapred.output=output 
+--usersFile input/users.txt --booleanData
+
+Check the Output
+---------------------------------------------
+bin/hadoop dfs -ls output
+
+bin/hadoop dfs -cat output/part-r-00000
+
+
+
+
+
+

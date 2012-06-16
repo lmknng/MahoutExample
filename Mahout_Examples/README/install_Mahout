@@ -1,0 +1,25 @@
+Download Mahout  
+--------------------------------------------------------------------
+Download Mahout Source mahout-distribution-0.5-src.tar.gz 
+OR 
+Download Mahout Binary  mahout-distribution-0.5.tar.gz  
+
+and Unzip at a location of your preference from 
+http://apache.techartifact.com/mirror/mahout/0.5/ 
+
+
+Build Mahout (if downloaded Mahout source)
+--------------------------------------------------------
+We require mahout core to be built so go to 
+mahout-distribution-0.5/core from a terminal and run 
+
+mvn clean package -DskipTests=true
+
+(ofcourse you need to have maven installed)
+
+Get Mahout Core into eclipse (if downloaded Mahout source)
+--------------------------------------------------------
+Import mahout core into eclipse as a maven project
+
+
+

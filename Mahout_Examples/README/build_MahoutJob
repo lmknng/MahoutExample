@@ -1,0 +1,15 @@
+Copy the Mahout Job Map Reduce Code into Mahout Core 
+=================================================================================
+If you have downloaded source
+-----------------------------
+Copy the code from  com.apache.mahout.recommender.wikipedia.example into Mahout Core  Source
+
+Build Mahout core again 
+So go to mahout-distribution-0.5/core from a terminal and run 
+mvn clean package -DskipTests=true
+
+else if you have downloaded binary
+-----------------------------------
+Merge the mahout-core-0.5-job.jar and the class files from
+ com.apache.mahout.recommender.wikipedia.example
+

@@ -1,0 +1,33 @@
+These instructions are for Ubuntu
+
+Set Java
+------------------------------------------------------------
+Hadoop + Java Version 
+http://wiki.apache.org/hadoop/HadoopJavaVersions
+
+
+And I have on my machine
+java -version
+java version "1.6.0_26"
+Java(TM) SE Runtime Environment (build 1.6.0_26-b03)
+Java HotSpot(TM) Server VM (build 20.1-b02, mixed mode)
+
+PLEASE NOTE Please extract the java to: “/usr/lib/jvm/java-6-sun” and set JAVA_HOME
+
+Add the CDH3 repository:
+------------------------------------------------------------------
+Create a new file /etc/apt/sources.list.d/cloudera-cdh3.list with the following contents: 
+
+deb http://archive.cloudera.com/debian maverick-cdh3 contrib
+deb-src http://archive.cloudera.com/debian maverick-cdh3 contrib
+
+
+Update the APT package index: 
+$ sudo apt-get update
+
+Install Hadoop 
+------------------------------------------------------
+sudo apt-get install hadoop-0.20-conf-pseudo
+
+
+
